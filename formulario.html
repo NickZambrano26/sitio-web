@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Comunidad Gamer - Pixel Gamer</title>
+    <style>
+      #presentacion,
+      #comunidad {
+        max-width: 600px;
+        margin: 0 auto 24px auto;
+      }
+
+      .presentacion-contenido {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+      }
+
+      .presentacion-contenido p {
+        flex: 1 1 250px;
+        margin: 0;
+        text-align: justify;
+      }
+      #avatar {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 3px solid var(--color-acento);
+      }
+
+      form {
+        padding: 24px;
+        background-color: var(--color-superficie);
+        border: 1px solid var(--color-borde);
+        border-radius: 8px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+      }
+
+      label ~ label {
+        margin-top: 16px;
+      }
+
+      /*Selector de atributos*/
+      input[type="text"],
+      input[type="email"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        background-color: var(--color-fondo);
+        color: var(--color-texto);
+        border: 1px solid var(--color-borde);
+        border-radius: 6px;
+        font-size: 16px;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--color-acento-claro);
+        outline: 2px solid var(--color-acento-claro);
+      }
+
+      button[type="submit"] {
+        margin-top: 20px;
+        padding: 10px 24px;
+        background-color: var(--color-acento);
+        color: var(--color-texto);
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: var(--color-acento-claro);
+        color: var(--color-fondo);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Pixel Gamer</h1>
+      <!--Barra de navegacion-->
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="formulario.html">Comunidad Gamer</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="presentacion">
+        <h2>Sobre mí como jugador</h2>
+        <div class="presentacion-contenido">
+          <img src="img/avatar.png" alt="Foto de perfil de Nick" id="avatar" />
+          <p>
+            Me considero un jugador casual y disfruto de los videojuegos tanto en PC como en PS4. A lo largo del tiempo
+            he probado títulos de diferentes géneros, pero mi objetivo siempre ha sido el mismo: divertirme y pasar un
+            buen rato, ya sea disfrutando de un juego de historia por mi cuenta o compartiendo partidas online con mis
+            amigos.
+          </p>
+        </div>
+      </section>
+
+      <section id="comunidad">
+        <h2>Comparte tu experiencia</h2>
+        <form>
+          <label for="nombre">Tu nombre de usuario:</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <label for="plataforma">¿En qué plataforma juegas?</label>
+          <select id="plataforma" name="plataforma" required>
+            <option value="">Selecciona una plataforma</option>
+            <option value="consola">Consolas</option>
+            <option value="pc">PC</option>
+            <option value="movil">Móvil</option>
+          </select>
+
+          <label for="juego-fav">Tu juego favorito:</label>
+          <input type="text" id="juego-fav" name="juego-fav" required />
+
+          <label for="comentario">Cuéntame por qué te gusta:</label>
+          <textarea id="comentario" name="comentario" rows="5" required style="resize: vertical"></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+    <!--Pie de pagina-->
+    <footer>
+      <p>&copy; 2026 Pixel Gamer</p>
+      <p>Autor del Sitio Web: Nick Zambrano Arteaga</p>
+      <p>
+        Las imágenes de portadas son propiedad de sus respectivos dueños y son proporcionadas a través de
+        <a href="https://www.igdb.com/" target="_blank" rel="noopener noreferrer">IGDB</a>.
+      </p>
+    </footer>
+  </body>
+</html>

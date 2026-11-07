@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Inicio - Pixel Gamer</title>
+
+    <style>
+      #juegos-destacados ol {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        counter-reset: puesto; /*contador que empienza en 0*/
+      }
+
+      #juegos-destacados li {
+        width: 180px;
+        counter-increment: puesto; /*se incrementa cada que aparece un li*/
+        background-color: var(--color-superficie);
+        border: 1px solid var(--color-borde);
+        border-radius: 8px;
+        padding: 12px;
+        text-align: center;
+      }
+
+      /*PseudoElemento*/
+      #juegos-destacados li::before {
+        content: "#" counter(puesto); /*imprime el valor*/
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--color-acento-claro);
+      }
+
+      #juegos-destacados li:first-child {
+        border-color: var(--color-acento);
+      }
+
+      #juegos-destacados li:hover {
+        border-color: var(--color-acento-claro);
+      }
+
+      #juegos-destacados a {
+        text-decoration: none;
+      }
+      #portada p::first-letter {
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--color-acento-claro);
+      }
+
+      #juegos-destacados ol + div {
+        text-align: center;
+      }
+
+      .btn-primario {
+        display: inline-block;
+        margin-top: 24px;
+        padding: 10px 20px;
+        background-color: var(--color-acento);
+        color: var(--color-texto);
+        text-decoration: none;
+        border-radius: 6px;
+      }
+
+      .btn-primario::after {
+        content: " →";
+      }
+
+      .btn-primario:hover {
+        background-color: var(--color-acento-claro);
+        color: var(--color-fondo);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Pixel Gamer</h1>
+      <!--Barra de navegacion-->
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="formulario.html">Comunidad Gamer</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!--Seccion de la portada-->
+      <section id="portada">
+        <h2>Bienvenido a Pixel Gamer</h2>
+        <p>
+          Los videojuegos siempre han sido una forma de entretenerme y disfrutar de diferentes historias y experiencias.
+          En esta página encontrarás algunos de mis juegos favoritos, desde aventuras y combates hasta mundos abiertos
+          donde puedes explorar, construir o simplemente pasar el rato. Cada uno tiene algo que lo hace especial y por
+          eso quise reunirlos en un solo lugar.
+        </p>
+      </section>
+      <!--Seccion 2 -->
+      <section id="juegos-destacados">
+        <h2>Mi Top 5 Juegos Favoritos</h2>
+        <ol>
+          <li>
+            <a href="catalogo.html">
+              <img src="img/ac_black_flag.webp" alt="Portada del videjuego de AssassinCreed IV: Black Flag" />
+              <div class="info">
+                <strong>Assassin's Creed IV: Black Flag</strong>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="catalogo.html">
+              <img src="img/spiderman_marvel.webp" alt="Portada del videojuego de Marvel Spiderman" />
+              <div class="info">
+                <strong>Marvel's Spider-Man</strong>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="catalogo.html">
+              <img src="img/fortnite.jpg" alt="Portada del videojuego de Fortnite Battle Royal" />
+              <div class="info">
+                <strong>Fortnite</strong>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="catalogo.html">
+              <img src="img/minecraft.webp" alt="Portada del videojuego de Minecraft" />
+              <div class="info">
+                <strong>Minecraft</strong>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="catalogo.html">
+              <img src="img/euro_truck_s2.webp" alt="Portada del videojuego de Euro Truck Simulator 2" />
+              <div class="info">
+                <strong>Euro Truck Simulator 2</strong>
+              </div>
+            </a>
+          </li>
+        </ol>
+
+        <div>
+          <a href="catalogo.html" class="btn-primario">Ver el catalogo de juegos</a>
+        </div>
+      </section>
+    </main>
+    <!--Pie de pagina-->
+    <footer>
+      <p>&copy; 2026 Pixel Gamer</p>
+      <p>Autor del Sitio Web: Nick Zambrano Arteaga</p>
+      <p>
+        Las imágenes de portadas son propiedad de sus respectivos dueños y son proporcionadas a través de
+        <a href="https://www.igdb.com/" target="_blank" rel="noopener noreferrer">IGDB</a>.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,171 @@
+/*Variables*/
+:root {
+  --color-fondo: #12121c;
+  --color-superficie: #1e1e2e;
+  --color-texto: #e8e8f0;
+  --color-texto-suave: #a0a0b8;
+  --color-acento: #7c5cff;
+  --color-acento-claro: #a994ff;
+  --color-borde: #34344a;
+  --fuente-principal: "Segoe UI", Roboto, sans-serif;
+}
+/*Selector universal*/
+*{
+    box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  line-height: 1.6; /*Espaciado entre lineas*/
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+header,
+main,
+footer {
+  padding: 16px 24px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-acento-claro);
+}
+h2{
+    text-align: center;
+}
+a {
+  color: var(--color-acento-claro);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*Selector de ID*/
+#portada {
+  padding: 24px;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+}
+
+/*Selector de clase*/
+.fuente {
+  font-size: 14px;
+  color: var(--color-texto-suave);
+}
+header {
+  background-color: var(--color-superficie);
+  border-bottom: 2px solid var(--color-acento);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > h1 {
+  margin: 0 0 12px 0;
+}
+
+/*Selecotr comibanadores*/
+nav ul {
+  display: flex;
+  flex-wrap: wrap; /*wrap, permite que baje el otro elemento si no hay espacio*/
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+}
+/*Selector Pseudo clase*/
+nav a:hover {
+  background-color: var(--color-acento);
+  color: var(--color-texto);
+}
+footer {
+  margin-top: 32px;
+  background-color: var(--color-superficie);
+  border-top: 2px solid var(--color-acento);
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-texto-suave);
+}
+
+footer p {
+  margin: 4px 0;
+}
+
+footer a:hover {
+  color: var(--color-texto);
+}
+#contenedor-principal{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.tarjeta h3 {
+  margin-top: 0;
+}
+.tarjeta img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  align-self: center;
+  margin: 8px 0 12px 0;
+  border-radius: 6px;
+}
+.tarjeta a {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 8px 16px;
+  background-color: var(--color-acento);
+  color: var(--color-texto);
+  text-decoration: none;
+  border-radius: 6px;
+}
+.tarjeta p{
+    text-align: justify;
+}
+.tarjeta a[href^="https"]::after {
+  content: " ↗";
+}
+
+.tarjeta a:hover {
+  background-color: var(--color-acento-claro);
+  color: var(--color-fondo);
+}
+
+.tarjeta:hover {
+  border-color: var(--color-acento);
+}
+
+/*media queries*/
+@media (min-width: 768px) {
+  #contenedor-principal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  #contenedor-principal {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
