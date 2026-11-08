@@ -9,33 +9,32 @@
   --color-borde: #34344a;
   --fuente-principal: "Segoe UI", Roboto, sans-serif;
 }
-/*Selector universal*/
-*{
-    box-sizing: border-box;
+
+/* Selector universal */
+* {
+  box-sizing: border-box;
 }
 
-
+/* Selector de etiqueta */
 body {
   margin: 0;
-  line-height: 1.6; /*Espaciado entre lineas*/
+  font-family: var(--fuente-principal);
+  line-height: 1.6; /* Espaciado entre lineas */
   background-color: var(--color-fondo);
   color: var(--color-texto);
 }
 
-header,
-main,
-footer {
-  padding: 16px 24px;
-}
-
+/* Agrupacion de selectores */
 h1,
 h2,
 h3 {
   color: var(--color-acento-claro);
 }
-h2{
-    text-align: center;
+
+h2 {
+  text-align: center;
 }
+
 a {
   color: var(--color-acento-claro);
 }
@@ -44,34 +43,51 @@ img {
   max-width: 100%;
   height: auto;
 }
-/*Selector de ID*/
-#portada {
-  padding: 24px;
-  background-color: var(--color-superficie);
-  border: 1px solid var(--color-borde);
+
+/*Estructura de la página*/
+header,
+main,
+footer {
+  padding: 16px 24px;
 }
 
-/*Selector de clase*/
-.fuente {
-  font-size: 14px;
-  color: var(--color-texto-suave);
-}
 header {
-  background-color: var(--color-superficie);
-  border-bottom: 2px solid var(--color-acento);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--color-superficie);
+  border-bottom: 2px solid var(--color-acento);
 }
 
+/*Combinador de hijo directo*/
 header > h1 {
-  margin: 0 0 12px 0;
+  margin: 0;
 }
 
-/*Selecotr comibanadores*/
+footer {
+  margin-top: 32px;
+  background-color: var(--color-superficie);
+  border-top: 2px solid var(--color-acento);
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-texto-suave);
+}
+
+/*Combinador descendiente*/
+footer p {
+  margin: 4px 0;
+}
+
+/* Pseudoclase */
+footer a:hover {
+  color: var(--color-texto);
+}
+
+/*Menú de navegación*/
+/*Combinador descendiente */
 nav ul {
   display: flex;
-  flex-wrap: wrap; /*wrap, permite que baje el otro elemento si no hay espacio*/
+  flex-wrap: wrap; 
   gap: 12px;
   list-style: none;
   margin: 0;
@@ -85,33 +101,30 @@ nav a {
   border: 1px solid var(--color-borde);
   border-radius: 6px;
 }
-/*Selector Pseudo clase*/
+
+/* Pseudoclase */
 nav a:hover {
   background-color: var(--color-acento);
   color: var(--color-texto);
 }
-footer {
-  margin-top: 32px;
+
+/* Pag. de inicio*/
+/* Selector de id */
+#portada {
+  padding: 24px;
   background-color: var(--color-superficie);
-  border-top: 2px solid var(--color-acento);
-  text-align: center;
-  font-size: 14px;
-  color: var(--color-texto-suave);
+  border: 1px solid var(--color-borde);
 }
 
-footer p {
-  margin: 4px 0;
-}
-
-footer a:hover {
-  color: var(--color-texto);
-}
-#contenedor-principal{
+/* Catálogo */
+/* Selector de id: contenedor del Grid */
+#contenedor-principal {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
 }
 
+/* Selector de clase */
 .tarjeta {
   display: flex;
   flex-direction: column;
@@ -121,9 +134,14 @@ footer a:hover {
   padding: 16px;
 }
 
+.tarjeta:hover {
+  border-color: var(--color-acento);
+}
+
 .tarjeta h3 {
   margin-top: 0;
 }
+
 .tarjeta img {
   width: 100%;
   max-width: 200px;
@@ -132,6 +150,16 @@ footer a:hover {
   margin: 8px 0 12px 0;
   border-radius: 6px;
 }
+
+.tarjeta p {
+  text-align: justify;
+}
+
+.fuente {
+  font-size: 14px;
+  color: var(--color-texto-suave);
+}
+
 .tarjeta a {
   margin-top: auto;
   align-self: flex-start;
@@ -141,9 +169,8 @@ footer a:hover {
   text-decoration: none;
   border-radius: 6px;
 }
-.tarjeta p{
-    text-align: justify;
-}
+
+/* Selector de atributo y pseudoelemento */
 .tarjeta a[href^="https"]::after {
   content: " ↗";
 }
@@ -153,11 +180,7 @@ footer a:hover {
   color: var(--color-fondo);
 }
 
-.tarjeta:hover {
-  border-color: var(--color-acento);
-}
-
-/*media queries*/
+/* Diseño responsivo (media queries)  */
 @media (min-width: 768px) {
   #contenedor-principal {
     grid-template-columns: repeat(2, 1fr);
